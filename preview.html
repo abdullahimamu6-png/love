@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Ayshhh ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#fff0f5;
+  --text:#444;
+  --card:#ffffffc2;
+  --accent:#ff5e95;
+  --gradient:linear-gradient(135deg,#ffe6f0,#f5e8ff,#fff);
+}
+
+.dark{
+  --bg:#120915;
+  --text:#f2e9f7;
+  --card:#241129d9;
+  --accent:#ff8ac2;
+  --gradient:linear-gradient(135deg,#170a1c,#22112a,#100814);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--gradient);
+  color:var(--text);
+  overflow-x:hidden;
+  transition:0.5s;
+}
+
+/* CINEMATIC INTRO */
+
+#intro{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:black;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:white;
+  overflow:hidden;
+}
+
+#intro::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:
+  linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+  url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  filter:blur(2px);
+}
+
+.intro-content{
+  position:relative;
+  text-align:center;
+  animation:fadeIn 3s ease;
+}
+
+.intro-content h1{
+  font-size:4rem;
+  font-family:'Playfair Display', serif;
+  color:#fff;
+}
+
+.intro-content p{
+  margin-top:20px;
+  font-size:1.2rem;
+  letter-spacing:2px;
+  opacity:0.9;
+}
+
+.enter-btn{
+  margin-top:40px;
+  padding:15px 40px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(45deg,#ff5e95,#d58cff);
+  color:white;
+  cursor:pointer;
+  font-size:1rem;
+  transition:0.4s;
+}
+
+.enter-btn:hover{
+  transform:scale(1.05);
+}
+
+/* PASSWORD SCREEN */
+
+#passwordScreen{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999999;
+}
+
+.password-box{
+  background:white;
+  padding:40px;
+  border-radius:25px;
+  text-align:center;
+  width:90%;
+  max-width:400px;
+}
+
+.password-box h2{
+  color:#ff5e95;
+  margin-bottom:20px;
+}
+
+.password-box input{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:#f2f2f2;
+  margin-bottom:20px;
+  outline:none;
+}
+
+.password-box button{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:#ff5e95;
+  color:white;
+  cursor:pointer;
+}
+
+/* HEARTS */
+
+.hearts{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  z-index:-1;
+}
+
+.heart{
+  position:absolute;
+  bottom:-20px;
+  color:rgba(255,105,180,0.35);
+  animation:float 8s linear infinite;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  10%{
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h1{
+  font-size:3rem;
+  max-width:900px;
+  color:var(--accent);
+}
+
+.hero p{
+  max-width:700px;
+  line-height:1.9;
+  margin-top:20px;
+}
+
+.section-title{
+  font-size:2.5rem;
+  margin-bottom:40px;
+  color:var(--accent);
+  font-family:'Playfair Display', serif;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  width:100%;
+  max-width:1100px;
+}
+
+.card{
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  width:100%;
+  max-width:1100px;
+}
+
+.gallery img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:20px;
+  transition:0.5s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+.glow-heart{
+  font-size:70px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.15);
+  }
+}
+
+.music-btn,
+.theme-btn{
+  position:fixed;
+  top:20px;
+  border:none;
+  padding:12px 18px;
+  border-radius:50px;
+  cursor:pointer;
+  background:white;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  z-index:999;
+}
+
+.music-btn{
+  right:20px;
+}
+
+.theme-btn{
+  right:130px;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media(max-width:768px){
+
+  .intro-content h1{
+    font-size:2.5rem;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+
+  <div class="intro-content">
+    <h1>Ayshhh ❤️</h1>
+    <p>Some feelings are too soft for words...</p>
+
+    <button class="enter-btn" onclick="showPassword()">
+      Enter
+    </button>
+  </div>
+
+</div>
+
+<!-- PASSWORD -->
+<div id="passwordScreen">
+
+  <div class="password-box">
+
+    <h2>Private Access ❤️</h2>
+
+    <input type="password" id="passwordInput" placeholder="Enter password">
+
+    <button onclick="checkPassword()">
+      Unlock My Heart
+    </button>
+
+  </div>
+
+</div>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts"></div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="ABDUL_HASSAN_ft_JAMILA_SADI_-_ABADAN__official_video__featuring_ADAM_GARBA_AND_AMINA_HASSAN(256k).mp3" type="audio/mp3">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">
+  🔊 Music
+</button>
+
+<button class="theme-btn" onclick="toggleTheme()">
+  🌙 Mood
+</button>
+
+<!-- HERO -->
+<section class="hero">
+
+<h1>
+You are my favorite reason to smile, Ayshhh ❤️
+</h1>
+
+<p>
+I don’t know if you notice, but somehow your presence
+makes everything feel a little lighter and better.
+</p>
+
+</section>
+
+<!-- ABOUT -->
+<section>
+
+<h2 class="section-title">
+About Her ✨
+</h2>
+
+<div class="cards">
+
+<div class="card">
+“I like the way you carry yourself… it’s effortless and beautiful.”
+</div>
+
+<div class="card">
+“You don’t even try, but you still stand out to me.”
+</div>
+
+<div class="card">
+“Sometimes I just catch myself thinking, wow, she’s really special.”
+</div>
+
+<div class="card">
+“Even a simple hi from you can change my whole mood.”
+</div>
+
+</div>
+
+</section>
+
+<!-- LOVE NOTES -->
+<section>
+
+<h2 class="section-title">
+Little Things 💌
+</h2>
+
+<div class="cards">
+
+<div class="card">
+“Dear Ayshhh, somehow you became one of the thoughts that randomly makes my day better.”
+</div>
+
+<div class="card">
+“I admire you quietly from my little corner of the world.”
+</div>
+
+<div class="card">
+“There’s something peaceful about your smile.”
+</div>
+
+<div class="card">
+“If you ever wondered whether someone thinks you’re special… yes.”
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+<section>
+
+<h2 class="section-title">
+Ayshhh Gallery 📸
+</h2>
+
+<div class="gallery">
+
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+<img src="4.jpg">
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+<section>
+
+<h2 class="section-title">
+From Afar ❤️
+</h2>
+
+<p style="max-width:700px; line-height:2;">
+I don’t know where this feeling goes,
+but I’m glad I noticed you, Ayshhh ❤️
+No pressure, no expectations…
+just admiration from afar.
+</p>
+
+<div class="glow-heart">
+❤️
+</div>
+
+</section>
+
+<script>
+
+/* PASSWORD */
+
+const PASSWORD = "ayshhh";
+
+function showPassword(){
+  document.getElementById("passwordScreen").style.display="flex";
+}
+
+function checkPassword(){
+
+  const input =
+  document.getElementById("passwordInput").value;
+
+  if(input === PASSWORD){
+
+    document.getElementById("intro").style.display="none";
+    document.getElementById("passwordScreen").style.display="none";
+
+    document.getElementById("bgMusic").play();
+
+  }else{
+    alert("Wrong password ❤️");
+  }
+}
+
+/* THEME */
+
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+}
+
+/* MUSIC */
+
+const music =
+document.getElementById("bgMusic");
+
+function toggleMusic(){
+
+  if(music.paused){
+    music.play();
+  }else{
+    music.pause();
+  }
+
+}
+
+/* HEARTS */
+
+const heartsContainer =
+document.querySelector(".hearts");
+
+function createHeart(){
+
+  const heart =
+  document.createElement("div");
+
+  heart.classList.add("heart");
+
+  heart.innerHTML = "❤";
+
+  heart.style.left =
+  Math.random()*100 + "vw";
+
+  heart.style.fontSize =
+  (Math.random()*20+10)+"px";
+
+  heart.style.animationDuration =
+  (Math.random()*5+5)+"s";
+
+  heartsContainer.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },10000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
